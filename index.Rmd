@@ -24,5 +24,4 @@ text-align: justify}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# UAS Visulisasi Data
-
+#Haloo
