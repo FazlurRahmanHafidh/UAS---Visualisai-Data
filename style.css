@@ -1,0 +1,55 @@
+/* Gaya Umum */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa; /* Warna latar belakang biru langit */
+    color: #003366; /* Warna teks gelap untuk kontras */
+}
+
+/* Judul */
+h1, h2, h3, h4, h5, h6 {
+    color: #007bb8; /* Warna biru untuk judul */
+}
+
+/* Tautan */
+a {
+    color: #007bb8; /* Warna tautan biru */
+    text-decoration: none; /* Menghilangkan garis bawah */
+}
+
+a:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+}
+
+/* Tabel */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #007bb8; /* Warna batas tabel */
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #b3e0f2; /* Warna latar belakang header tabel */
+}
+
+/* Kode */
+pre {
+    background-color: #f0f8ff; /* Warna latar belakang untuk blok kode */
+    border: 1px solid #007bb8; /* Warna batas blok kode */
+    padding: 10px;
+    overflow-x: auto; /* Mengizinkan scroll horizontal */
+}
+
+/* Gaya untuk paragraf */
+p {
+    line-height: 1.6; /* Jarak antar baris */
+}
+
+/* Gaya untuk daftar */
+ul, ol {
+    margin-left: 20px; /* Margin untuk daftar */
+}
