@@ -21,7 +21,7 @@ body{
 text-align: justify}
 </style>
 ```
-```{r }
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -96,6 +96,31 @@ Warna pada heatmap menunjukkan rata-rata angka harapan hidup di setiap benua per
 # 4.Grafik Interaktif (Scatter Plot Interaktif)
 ## Hubungan Pendapatan per Kapita dan Angka Harapan Hidup
 Scatter plot interaktif ini menunjukkan hubungan antara Pendapatan per Kapita dan Angka Harapan Hidup di berbagai negara. Dengan menggunakan plot interaktif, pengguna dapat melihat informasi detail dengan mengarahkan kursor ke titik data.
+
+```{r}
+library(shiny)
+
+ui <- fluidPage(
+  titlePanel("Contoh Aplikasi Shiny"),
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("num", "Pilih angka:", 1, 100, 50)
+    ),
+    mainPanel(
+      textOutput("result")
+    )
+  )
+)
+
+server <- function(input, output) {
+  output$result <- renderText({
+    paste("Anda memilih angka:", input$num)
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
 
 ```{r}
 # Memuat library yang diperlukan
