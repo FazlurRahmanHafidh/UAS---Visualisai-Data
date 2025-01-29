@@ -37,8 +37,8 @@ data <- read_excel("E:/DATA VISUALITATION/UAS---Visualisai-Data/Data.xlsx")
 head(data)
 ``` 
 
-## 1.Grafik Univariat (Histogram)
-### Distribusi Angka Harapan Hidup
+# 1.Grafik Univariat (Histogram)
+## Distribusi Angka Harapan Hidup
 Visualisasi ini menunjukkan distribusi Angka Harapan Hidup menggunakan histogram. Histogram ini dibuat dengan menentukan binwidth sebesar 1 untuk mendapatkan distribusi yang lebih halus.
 
 ```{r}
@@ -54,8 +54,8 @@ ggplot(data, aes(x = Angka_Harapan_Hidup)) +
 ##### Interpretasi: 
 Histogram ini membantu kita memahami bagaimana angka harapan hidup tersebar di berbagai negara. Kita dapat melihat apakah distribusi cenderung normal atau ada pola tertentu.
 
-## 2.Grafik Bivariat (Scatter Plot)
-### Hubungan Pendapatan per Kapita dan Angka Harapan Hidup
+# 2.Grafik Bivariat (Scatter Plot)
+## Hubungan Pendapatan per Kapita dan Angka Harapan Hidup
 Scatter plot ini digunakan untuk menunjukkan hubungan antara Pendapatan per Kapita dan Angka Harapan Hidup. Setiap titik mewakili sebuah negara, dan warna menunjukkan benua tempat negara tersebut berada.
 ```{r}
 library(ggplot2)
@@ -70,8 +70,8 @@ ggplot(data, aes(x = Pendapatan_per_kapita, y = Angka_Harapan_Hidup)) +
 ##### Interpretasi: 
 Dari visualisasi ini, kita bisa melihat apakah ada korelasi positif antara pendapatan per kapita dan angka harapan hidup. Biasanya, negara dengan pendapatan per kapita yang lebih tinggi memiliki angka harapan hidup yang lebih tinggi.
 
-## 3.Grafik Multivariat (Heatmap)
-### Heatmap Rata-rata Angka Harapan Hidup per Benua dan Tahun
+# 3.Grafik Multivariat (Heatmap)
+## Heatmap Rata-rata Angka Harapan Hidup per Benua dan Tahun
 Heatmap ini digunakan untuk menampilkan tren rata-rata Angka Harapan Hidup di setiap benua berdasarkan tahun.
 ```{r}
 library(ggplot2)
@@ -93,8 +93,8 @@ ggplot(data_heatmap, aes(x = Tahun, y = Benua, fill = Rata_Harapan_Hidup)) +
 ##### Interpretasi: 
 Warna pada heatmap menunjukkan rata-rata angka harapan hidup di setiap benua per tahun. Semakin gelap warna biru, semakin tinggi angka harapan hidup di wilayah tersebut.
 
-## 4.Grafik Interaktif (Scatter Plot Interaktif)
-### Hubungan Pendapatan per Kapita dan Angka Harapan Hidup
+# 4.Grafik Interaktif (Scatter Plot Interaktif)
+## Hubungan Pendapatan per Kapita dan Angka Harapan Hidup
 Scatter plot interaktif ini menunjukkan hubungan antara Pendapatan per Kapita dan Angka Harapan Hidup di berbagai negara. Dengan menggunakan plot interaktif, pengguna dapat melihat informasi detail dengan mengarahkan kursor ke titik data.
 
 ```{r}
@@ -103,11 +103,12 @@ library(ggplot2)
 library(plotly)
 library(readxl)
 library(dplyr)
+library(htmlwidgets)
 
 # Memuat data
 data <- read_excel("Data.xlsx")  # Pastikan file ini ada di direktori yang sama
 
-# Filter data untuk tahun tertentu
+# Pilih tahun yang diinginkan
 tahun_terpilih <- min(data$Tahun)  # Ganti dengan tahun yang diinginkan
 data_filtered <- data %>% filter(Tahun == tahun_terpilih)
 
@@ -122,8 +123,8 @@ p <- ggplot(data_filtered, aes(x = Pendapatan_per_kapita, y = Angka_Harapan_Hidu
 # Mengonversi plot ggplot menjadi plotly
 p_interaktif <- ggplotly(p, tooltip = "text")
 
-# Menyimpan plot interaktif sebagai file HTML
-htmlwidgets::saveWidget(p_interaktif, "visualisasi_interaktif.html")
+# Menampilkan plot interaktif
+p_interaktif
 ``` 
 
 ##### Interpretasi: 
