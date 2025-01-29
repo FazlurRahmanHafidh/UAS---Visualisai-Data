@@ -40,6 +40,7 @@ head(data)
 ## 1.Grafik Univariat (Histogram)
 ### Distribusi Angka Harapan Hidup
 Visualisasi ini menunjukkan distribusi Angka Harapan Hidup menggunakan histogram. Histogram ini dibuat dengan menentukan binwidth sebesar 1 untuk mendapatkan distribusi yang lebih halus.
+
 ```{r}
 library(ggplot2)
 ggplot(data, aes(x = Angka_Harapan_Hidup)) +
@@ -95,6 +96,7 @@ Warna pada heatmap menunjukkan rata-rata angka harapan hidup di setiap benua per
 ## 4.Grafik Interaktif (Scatter Plot Interaktif)
 ### Hubungan Pendapatan per Kapita dan Angka Harapan Hidup
 Scatter plot interaktif ini menunjukkan hubungan antara Pendapatan per Kapita dan Angka Harapan Hidup di berbagai negara. Dengan menggunakan plot interaktif, pengguna dapat melihat informasi detail dengan mengarahkan kursor ke titik data.
+
 ```{r}
 library(shiny)
 library(ggplot2)
@@ -115,7 +117,7 @@ ui <- fluidPage(
                         max = max(data$Tahun), 
                         value = min(data$Tahun),
                         step = 1,
-                        animate = animationOptions(interval = 200, loop = TRUE))
+                        animate = animationOptions(interval = 250, loop = TRUE))
         ),
         mainPanel(
             plotlyOutput("scatterPlot")
