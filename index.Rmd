@@ -103,6 +103,7 @@ library(ggplot2)
 library(plotly)
 library(readxl)
 library(dplyr)
+library(shinylive)
 
 # Load data
 data <- read_excel("E:/DATA VISUALITATION/UAS---Visualisai-Data/Data.xlsx")
@@ -143,6 +144,7 @@ server <- function(input, output) {
 
 # Jalankan aplikasi
 shinyApp(ui = ui, server = server)
+shinylive::export(appdir = ".", destdir = "docs")
 
 ```
 
