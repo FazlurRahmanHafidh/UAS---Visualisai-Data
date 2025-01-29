@@ -103,10 +103,9 @@ library(ggplot2)
 library(plotly)
 library(readxl)
 library(dplyr)
-library(shinylive)
 
 # Load data
-data <- read_excel("E:/DATA VISUALITATION/UAS---Visualisai-Data/Data.xlsx")
+data <- read_excel("Data.xlsx")  # Pastikan file ini ada di direktori yang sama
 
 # UI
 ui <- fluidPage(
@@ -144,8 +143,26 @@ server <- function(input, output) {
 
 # Jalankan aplikasi
 shinyApp(ui = ui, server = server)
-shinylive::export(appdir = ".", destdir = "docs")
 
+# Ekspor aplikasi setelah mendefinisikan
+
+``` 
+
+```{r}
+list.files()
+```
+
+```{r}
+setwd("E:/DATA VISUALITATION/UAS---Visualisai-Data")
+```
+
+```{r}
+shinylive::export(appdir = ".", destdir = "docs")
+```
+
+```{r}
+library(httpuv)
+httpuv::runStaticServer("docs")
 ```
 
 ##### Interpretasi: 
