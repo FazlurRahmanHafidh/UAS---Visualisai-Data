@@ -160,3 +160,4 @@ Heatmap yang menampilkan rata-rata Angka Harapan Hidup per Benua dan Tahun menun
 
 #### Scatter Plot Interaktif: 
 Scatter plot interaktif memberikan wawasan yang lebih mendalam tentang hubungan antara Pendapatan per Kapita dan Angka Harapan Hidup di berbagai negara. Dengan fitur interaktif, pengguna dapat dengan mudah mengeksplorasi data dan mengidentifikasi negara-negara yang memiliki Pendapatan per Kapita tinggi tetapi Angka Harapan Hidup yang rendah, yang mungkin menunjukkan adanya masalah dalam sistem kesehatan atau kebijakan sosial.
+
