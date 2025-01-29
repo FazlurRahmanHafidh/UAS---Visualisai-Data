@@ -21,7 +21,7 @@ body{
 text-align: justify}
 </style>
 ```
-```{r setup, include=FALSE}
+```{r }
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
